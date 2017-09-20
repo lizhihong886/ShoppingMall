@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>后台管理</title>
+	<link rel="stylesheet" type="text/css" href="/Statics/jquery_easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="/Statics/jquery_easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="/Statics/jquery_easyui/demo/demo.css">
+	<script type="text/javascript" src="/Statics/jquery_easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="/Statics/jquery_easyui/jquery.easyui.min.js"></script>
+	<style>
+		.jd_menu{
+			display: block;
+			font-size: 12px;
+			text-align: center;
+			text-decoration: none;
+			padding: 2px;
+		}
+		.active{
+			background-color: #00bbee;
+		}
+	</style>
+</head>
+<body class="easyui-layout">
+		<div data-options="region:'north'" style="height:50px"></div>
+		<div data-options="region:'south',split:true" style="height:50px;"></div>
+		<div data-options="region:'west',split:true" title="菜单" style="width:200px;">
+			<div class="easyui-accordion" id="menu" data-options="fit:true,border:false">
+				<div id="domain_manager" title="区域管理"  >
+					<a id="province" class="jd_menu" href="/province.html">省</a>
+					<a id="city" class="jd_menu" href="/city.html">市</a>
+					<a id="country" class="jd_menu" href="/country.html">县(区)</a>
+				</div>
+				<div id="user_manager" title="用户管理">
+					<a id="user" class="jd_menu" href="/user.html">用户管理</a>
+					<a id="merchant" class="jd_menu" href="/merchant.html">商户管理</a>
+				</div>
+				<div id="product_mamager" title="JD自营" >
+					<a href="/productManager.html" id="product" class="jd_menu">产品管理</a>
+
+				</div>
+			</div>
+		</div>
+<div data-options="region:'center'" title="{% block crumbs %} {% end %}">
+        {% block content %} {% end %}
+    </div>
+
+	{%block js%}
+	{%end%}
+</body>
+</html>

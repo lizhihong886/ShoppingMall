@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{%block content%}
+	<table class="easyui-datagrid" title="省份管理"
+			data-options="singleSelect:true,
+			url:'/province_data',
+			method:'get',
+			fitColumns:'true',
+			pagination:'true',
+			pagePosition:'top'
+
+            ">
+		<thead>
+			<tr>
+				<th data-options="field:'nid',width:80">nid</th>
+				<th data-options="field:'caption',width:100">省</th>
+			</tr>
+		</thead>
+	</table>
+
+{%end%}
+
+{%block js%}
+<script>
+    $(function () {
+        $("#province").addClass('active');
+        $("#menu").accordion('select',0);
+
+    });
+</script>
+{%end%}

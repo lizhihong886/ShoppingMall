@@ -1,0 +1,179 @@
+{% extends "../Layout/layout.html"%}
+{%block crumbs%}
+用户管理/商户管理
+{%end%}
+{%block content%}
+
+<table id="tb"></table>
+{%end%}
+{%block js%}
+<script>
+    $(function () {
+        InitMenu();
+        InitTable();
+        InitPagination();
+
+    });
+    function InitMenu() {
+        $("#merchant").addClass("active");
+        $("#menu").accordion("select",1)
+
+    }
+   //         初始化分页
+     function InitPagination(){
+            var pager = $('#tb').datagrid('getPager');
+            $(pager).pagination({
+                beforePageText: '第',
+                afterPageText: '页 共{pages}页',
+                displayMsg: '当前显示{from}-{to}条记录 共{total}条数据'
+            })
+        }
+      //初始化表格内容
+        function InitTable(){
+            $('#tb').datagrid({
+                title: '商户列表',
+                url: '/merchant.html',
+                method: 'get',
+                queryParams: {
+                    'type': 'pagination'
+                },
+                //fitColumns: true,
+                idField: 'nid',
+                singleSelect: true,
+                rownumbers: true,
+                striped: true,
+                columns:[[
+                    {
+                        field:'ck',
+                        checkbox:true
+                    },
+                    {
+                        field:'nid',
+                        title:'ID',
+                        align:'center'
+                    },
+					{
+                        field:'name',
+                        title:'商户名称',
+                        align:'center',
+                        width: 180
+                    },
+					{
+                        field:'domain',
+                        title:'域名',
+                        align:'center',
+                        width: 180
+                    },
+					{
+                        field:'product',
+                        title:'商品',
+                        align:'center',
+                        width: 180,
+                        formatter: function(val,row,index){
+                            var tagProduct = "<a href='merchantDetail.html?nid=" + row.nid +"'>商品列表</a>";
+                            var tagDetail = "<a href='merchantDetail.html?nid=" + row.nid +"'>查看详细</a>";
+                            return tagProduct+"|" + tagDetail;
+                        }
+                    },
+					{
+                        field:' detail',
+                        title:'选项',
+                        align:'center',
+                        width: 180,
+                        formatter: function(val,row,index){
+                            var tagEdit = "<a href='merchantEdit.html?nid=" + row.nid +"'>修改</a>";
+                            return tagEdit
+                        }
+
+                    }
+				]],
+                toolbar: [
+                    {
+                        text: '添加',
+                        iconCls: 'icon-add',
+                        handler: function(){
+                            location.href = 'merchantEdit.html';
+                        }
+                    },
+                    {
+                        text: "删除",
+                        iconCls: 'icon-remove',
+                        handler: RemoveRow
+                    }
+                ],
+                pagePosition: 'both',
+                pagination:true,
+                pageSize:10,
+                pageNumber: 1,
+                pageList: [10,20,50],
+                onClickRow: function (rowIndex, rowData) {
+                    $(this).datagrid('unselectRow', rowIndex);
+                },
+                loadFilter: function(data){
+                        if(data.status){
+                            return data;
+                        }else{
+                            $.messager.alert('错误提示',data.message,'error')
+                        }
+                    }
+                });
+        }
+        function RemoveRow() {
+            var rows=$("#tb").datagrid("getSelections");
+            console.log(rows);
+            if(rows.length>1){
+                $.messager.alert("警告","不支持批量删除","warning")
+            }else if(rows.length<1){
+                $.messager.alert("警告","请选择要删除的行","warning")
+            }else{
+                $.messager.confirm("警告","你确定要删除吗？",function (status) {
+                    if (status){
+                        var row=rows[0];
+                        $.ajax({
+                            url:"/merchantEdit.html",
+                            type:"delete",
+                            data:{"nid":row.nid},
+                            dataType:"json",
+                            success:function (data) {
+                                if(data.status){
+                                    //删除成功
+                                     $.messager.show({
+                                        msg:"删除成功",
+                                        showType:"slide",
+                                        showSpeed:1000,
+                                        timeout:10,
+                                        style:{
+                                            right:'',
+					                        left:"",
+					                        top:document.body.scrollTop+document.documentElement.scrollTop,
+					                        bottom:''
+                                        }
+                                    });
+                                    //重新加载表格
+                                    var RowIndex=$("#tb").datagrid("getIndexRow",row); //获取当前行索引
+                                    console.log(IndexRow);
+                                    $("#tb").datagrid("deleteRow",RowIndex);
+                                    $("#tb").datagrid("reload")
+                                }else{
+                                    //删除失败
+                                    $.messager.show({
+                                         msg:"删除失败",
+                                        showType:"slide",
+                                        showSpeed:1000,
+                                        timeout:10,
+                                        style:{
+                                            right:'',
+					                        left:"",
+					                        top:document.body.scrollTop+document.documentElement.scrollTop,
+					                        bottom:''
+                                        }
+                                    })
+                                }
+                            }
+                        })
+                    }
+                })
+            }
+        }
+</script>
+{%end%}

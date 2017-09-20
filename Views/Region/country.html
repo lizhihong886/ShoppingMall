@@ -1,0 +1,336 @@
+{% extends "../Layout/layout.html"%}
+{% block crumbs%}
+区域管理/县（区）管理
+{%end%}
+{% block content %}
+<style>
+     .group-input{
+        margin-top: 2%;
+        text-align: center;
+    }
+</style>
+        <table id="tb"></table>
+      <div id="dlg" class="easyui-dialog" style="width:400px;height:200px;padding:10px 20px"  closed=true buttons="#dlg-buttons">
+        <form id="fm1">
+                <div class="group-input" style="width: 300px;">
+                    <label for="province">省份:</label>
+                    <select name="province" id="dlg_province" >
+                        <option value="0">请选择省</option>
+                    </select>
+                    <br><br>
+                    <label for="city">城市:</label>
+                    <select name="city" id="dlg_city" >
+                        <option value="0">请选择市</option>
+                    </select>
+                    <br><br>
+                     <input id="dlg_nid" style="width: 200px;display: none"  name="nid"/>
+                    <label for="caption">县(区):</label>
+                    <input id="dlg_country" style="width: 200px" class="easyui-textbox" type="text" name="caption" data-options="required:true,missingMessage:'县（区）不能为空'" />
+                </div>
+        </form>
+    </div>
+     <div id="dlg-buttons">
+        <span id="dlg_summary" style="color: red"></span>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="Save()">保存</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+     </div>
+
+<script>
+    $(function () {
+        InitTable();
+        InitPagination();
+        InitMenu();
+        InitProvince();
+        BindProvinceChange()
+    });
+      /*
+        初始化左侧菜单
+        */
+        function InitMenu(){
+            $('#country').addClass('active');
+            $('#menu').accordion('select',0);
+
+        }
+    //初始化表格内容
+	    function InitTable(){
+            $('#tb').datagrid({
+                title: '县(区)列表',
+                iconCls: 'icon-save',
+                url: '/countryManager.html',
+                method: 'get',
+                fitColumns: true,
+                idField: 'nid',
+                singleSelect: true,
+                rownumbers: true,
+                striped: true,
+                columns:[[
+                    {
+                        field:'ck',
+                        checkbox:true
+                    },
+                    {
+                        field:'nid',
+                        title:'ID',
+                        align:'center',
+                        width:60
+                    },
+					{
+                        field:'caption',
+                        title:'县(区)',
+                        align:'center',
+                        width:100
+                    },
+                    {
+                        field:'city',
+                        title:'所属城市',
+                        align:'center',
+                        width:100
+                    },
+                    {
+                        field:'city_id',
+                        title:'所属城市ID',
+                        align:'center',
+                        hidden:true
+                    },
+                    {
+                        field:'province',
+                        title:'所属省份',
+                        align:'center',
+                        width:100
+                    },
+                    {
+                        field:'province_id',
+                        title:'所属省份ID',
+                        hidden: true
+                    }
+				]],
+                toolbar: [
+                    {
+                        text: '添加',
+                        iconCls: 'icon-add',
+                        handler: AddRow
+                    },{
+                        text:'删除',
+                        iconCls:'icon-remove',
+                        handler: RemoveRow
+                    },{
+                        text:'修改',
+                        iconCls:'icon-edit',
+                        handler: EditRow
+                    }
+                ],
+                pagePosition: 'both',
+                pagination:true,
+                pageSize:10,
+                pageNumber: 1,
+                pageList: [10,20,50],
+                loadFilter: function(data){
+                    return data;
+                    }
+                });
+        }
+//         初始化分页
+        function InitPagination(){
+            var pager = $('#tb').datagrid('getPager');
+            $(pager).pagination({
+                beforePageText: '第',
+                afterPageText: '页 共{pages}页',
+                displayMsg: '当前显示{from}-{to}条记录 共{total}条数据'
+            })
+        }
+//初始化省份列表
+        function InitProvince() {
+            //$("#dlg_province")
+            $.ajax({
+                url:'/provinceManager.html',
+                type:"get",
+                data:{"type":"all"},
+                dataType:"json",
+                success:function (data) {
+                    console.log(data);
+                    if(data.status){
+                        $.each(data.rows,function (k,v){
+                           var option=document.createElement('option');
+                           option.setAttribute("value",v.nid);
+                           option.innerText=v.caption;
+                           $('#dlg_province').append(option)
+                        })}
+                        else {
+                            $.messager.alert("警告","省份初始化失败",'warning');
+                        }
+                    }
+            })
+        }
+        function BindProvinceChange() {
+            $("#dlg_province").change(function () {
+                var province_id=$(this).val();
+                if (province_id=="0"){
+                    $("#dlg_city option:gt(0)").remove()
+
+                }else {
+                    //根据省份获取所有的市
+                    //清空所有并添加
+                    $.ajax({
+                        url:"/cityManager.html",
+                        type:"get",
+                        data:{"type":"province","province_id":province_id},
+                        dataType:"json",
+                        success:function (data) {
+                            if (data.status){
+                                $("#dlg_city option:gt(0)").remove();
+                                $.each(data.rows,function (k,v) {
+                                    var option=document.createElement("option");
+                                    option.setAttribute("value",v.nid);
+                                    option.innerText=v.caption;
+                                    $("#dlg_city").append(option);
+
+                                })
+                            }
+                            else{
+                                $.messager.alert("获取市列表是失败",data.message,"warning")
+                            }
+
+                        }
+                        }
+                    )
+
+                }
+            })
+
+        }
+        //初始化城市列表
+        var METHOD;
+        function AddRow() {
+            //清除表单内容
+            //打开对话框
+            $("#fm1").form("clear");
+            $("#dlg").dialog("open").dialog("setTitle","创建县(区)");
+            $("#dlg_summary").empty();
+            METHOD="post"
+        }
+        function RemoveRow() {
+            //获取选中的行
+            var rows=$("#tb").datagrid("getSelections");
+            console.log(rows);
+            if(rows.length<=0){
+                $.messager.alert("警告","请选择要删除的行","warning")
+
+            }else if(rows.length>1){
+                $.messager.alert("警告","不支持批量修改","warning")
+
+            }else{
+                $.messager.confirm("警告","您确定要删除吗？",function (status) {
+                    if(status){
+                        row=rows[0];
+                        $.ajax({
+                            url:"/countryManager.html",
+                            type:"delete",
+                            data:{"nid":row.nid},
+                            dataType:"json",
+                            success:function (data) {
+                                if(data.status){
+                                    //删除成功
+                                    $.messager.show({
+                                        msg:"删除成功",
+                                        showType:"slide",
+                                        showSpeed:1000,
+                                        timeout:10,
+                                        style:{
+                                            right:'',
+					                        left:"",
+					                        top:document.body.scrollTop+document.documentElement.scrollTop,
+					                        bottom:''
+
+                                        }
+                                    });
+                                    //重新加载表格
+                                    var rowIndex=$("#tb").datagrid('getRowIndex',row);
+                                    $("#tb").datagrid("deleteRow",rowIndex);
+                                    $("#tb").datagrid("reload")
+                                }
+                                else {
+                                    $.messager.show({
+                                         msg:"删除失败",
+                                        showType:"slide",
+                                        showSpeed:1000,
+                                        timeout:0,
+                                        style:{
+                                            right:'',
+					                        left:"",
+					                        top:document.body.scrollTop+document.documentElement.scrollTop,
+					                        bottom:''
+                                        }
+                                    })
+                                }
+                            }
+                        })
+                    }
+                })
+            }
+        }
+        function EditRow() {
+            var row=$("#tb").datagrid("getSelected");
+            $("#dlg_summary").empty();
+            if(row){
+                METHOD="put";
+                $("#fm1").form("clear");
+                $("#fm1").form("load",row);
+                $("#dlg_province").val(row.province_id);
+                $.ajax({
+                    url:"/cityManager.html",
+                    type:"Get",
+                    data:{"type":"province","province_id":row.province_id},
+                    dataType:"json",
+                    success:function (data) {
+                        if(data.status){
+                            $("#dlg_city option:gt(0)").remove();
+                            $.each(data.rows,function (k,v) {
+                                console.log(k,v);
+                                option=document.createElement("option");
+                                option.setAttribute("value",v.nid);
+                                option.innerText=v.caption;
+                                $("#dlg_city"). append(option)
+                            });
+                            $("#dlg_city").val(row.city_id);
+
+                        }else {
+                            $.messager.alert("警告","获取市列表失败","warning")
+                        }
+                    }
+                });
+                $("#dlg").dialog("open").dialog("setTitle","修改县(区)");
+
+            }else {
+                $.messager.alert("警告","请选择要修改的行","warning")
+
+            }
+
+        }
+        function Save() {
+            var isValidate=$("#fm1").form("validate");
+            if(isValidate){
+                $.ajax({
+                    url: "/countryManager.html",
+                    type: METHOD,
+                    data: {"nid": $("#dlg_nid").val(), "caption": $("#dlg_country").val(), "city_id": $("#dlg_city").val()},
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.status) {
+                            console.log(data);
+                            $("#fm1").form("clear");
+                            $("#dlg").dialog("close");
+                            $("#tb").datagrid("reload")
+                        } else {
+                            $("#dlg_summary").text(data.summary)
+
+                        }
+                    }
+                })
+            }
+            else {
+                //前端验证通过
+            }
+        }
+</script>
+{%end%}
+

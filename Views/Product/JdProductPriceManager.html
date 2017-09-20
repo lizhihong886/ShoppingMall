@@ -99,7 +99,7 @@ JD自营 / 产品管理 / {{data["title"]}}
                 url: 'JdProductPrice.html',
                 method: 'get',
                 queryParams: {
-                    'productid': '{{data["nid"]}}'
+                    'product_id': '{{data["nid"]}}'
                 },
                 idField: 'nid',
                 singleSelect: true,
@@ -219,7 +219,7 @@ JD自营 / 产品管理 / {{data["title"]}}
 
                 $('#dlg_province').val(row.province_id);
 
-                $('#dlg').dialog('open').dialog('setTitle','修改市');
+                $('#dlg').dialog('open').dialog('setTitle','修改价格');
 
             }else{
                 $.messager.alert('警告', '请选择要修改的行', 'warning');

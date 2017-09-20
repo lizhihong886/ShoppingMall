@@ -27,10 +27,12 @@ application = tornado.web.Application([
     (r"/productManager.html",Product.JdProductManager),
     (r"/JdProduct.html$",Product.JdProductHandler),
     (r"/JdProductEdit.html$",Product.JdProductEditHandler),
-    (r"/UploadImg.html",Image.UploadImageHandler)
+    (r"/UploadImg.html",Image.UploadImageHandler),
+    (r"/JdProductPriceManager.html",Product.JdProductPriceManagerHandler),
+    (r"/JdProductPrice.html",Product.JdProdutPriceHandler)
 ] ,**settings)#应用到tornado中，使其生效
 # Application对象是负责全局配置的, 包括映射请求转发给处理程序的路由表.
 
 if __name__ == "__main__":
-    application.listen(4545)
+    application.listen(5858)
     tornado.ioloop.IOLoop.instance().start()

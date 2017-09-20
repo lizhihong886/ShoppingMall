@@ -27,7 +27,6 @@ class MerchantHandler(tornado.web.RequestHandler):
                 ret['message'] = str(e)
             self.write(json.dumps(ret))
             return
-        print("hello")
         self.render('Merchant/merchantManager.html')
 
 class MerchantEdit(tornado.web.RequestHandler):

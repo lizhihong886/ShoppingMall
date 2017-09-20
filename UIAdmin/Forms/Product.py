@@ -15,7 +15,7 @@ class JdProductPriceForm(BaseForm):
     def __init__(self):
         self.nid=StringField(required=False)
         self.product_id=IntegerField()
-        self.price=DecimalField()
+        self.standard=StringField()
         self.price=DecimalField()
         self.selling_price=DecimalField()
         super(JdProductPriceForm,self).__init__()

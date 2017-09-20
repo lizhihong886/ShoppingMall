@@ -4,7 +4,24 @@
     <bookmark url="file://$PROJECT_DIR$/Views/Region/country.html" line="311" mnemonic="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e84a911-b1ae-4bb9-af73-e66b0f536e8a" name="Default" comment="" />
+    <list default="true" id="2e84a911-b1ae-4bb9-af73-e66b0f536e8a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application.py" afterPath="$PROJECT_DIR$/Application.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Infrastructure/JsonEnoder.py" afterPath="$PROJECT_DIR$/Infrastructure/JsonEnoder.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Model/Product.py" afterPath="$PROJECT_DIR$/Model/Product.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Repository/MerChantRepository.py" afterPath="$PROJECT_DIR$/Repository/MerChantRepository.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Repository/ProductRepository.py" afterPath="$PROJECT_DIR$/Repository/ProductRepository.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Repository/SQLAchemyOrm.py" afterPath="$PROJECT_DIR$/Repository/SQLAchemyOrm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UIAdmin/Controllers/Image.py" afterPath="$PROJECT_DIR$/UIAdmin/Controllers/Image.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UIAdmin/Controllers/Merchant.py" afterPath="$PROJECT_DIR$/UIAdmin/Controllers/Merchant.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UIAdmin/Controllers/Product.py" afterPath="$PROJECT_DIR$/UIAdmin/Controllers/Product.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UIAdmin/Forms/Product.py" afterPath="$PROJECT_DIR$/UIAdmin/Forms/Product.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/Layout/layout.html" afterPath="$PROJECT_DIR$/Views/Layout/layout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/Product/JdProductEdit.html" afterPath="$PROJECT_DIR$/Views/Product/JdProductEdit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/Product/JdProductPriceManager.html" afterPath="$PROJECT_DIR$/Views/Product/JdProductPriceManager.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/Product/productManager.html" afterPath="$PROJECT_DIR$/Views/Product/productManager.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practice.py" afterPath="$PROJECT_DIR$/practice.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,9 +35,9 @@
     <SUITE FILE_PATH="coverage/Jd$DbConnection.coverage" NAME="DbConnection Coverage Results" MODIFIED="1504681425241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Repository" />
     <SUITE FILE_PATH="coverage/Jd$practice.coverage" NAME="practice Coverage Results" MODIFIED="1505530864588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Jd$Unittests_for_practice_test3.coverage" NAME="Unittests for practice.test3 Coverage Results" MODIFIED="1505624003330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/Jd$Application.coverage" NAME="Application Coverage Results" MODIFIED="1505839578937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Jd$Application.coverage" NAME="Application Coverage Results" MODIFIED="1506353616261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Jd$SQLAchemyOrm.coverage" NAME="SQLAchemyOrm Coverage Results" MODIFIED="1504251311734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Repository" />
-    <SUITE FILE_PATH="coverage/Jd$Unittests_in_practice_py.coverage" NAME="Unittests in practice.py Coverage Results" MODIFIED="1505624172100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Jd$Unittests_in_practice_py.coverage" NAME="Unittests in practice.py Coverage Results" MODIFIED="1505972941274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
@@ -28,8 +45,8 @@
       <file leaf-file-name="Product.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UIAdmin/Controllers/Product.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1053">
-              <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+            <state relative-caret-position="3186">
+              <caret line="123" column="30" lean-forward="false" selection-start-line="123" selection-start-column="30" selection-end-line="123" selection-end-column="30" />
               <folding>
                 <element signature="e#45#63#0" expanded="true" />
               </folding>
@@ -37,49 +54,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JdProductEdit.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Views/Product/JdProductEdit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="131" column="68" lean-forward="false" selection-start-line="131" selection-start-column="68" selection-end-line="131" selection-end-column="68" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Application.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-              <folding>
-                <element signature="e#46#67#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Image.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UIAdmin/Controllers/Image.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Product.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UIAdmin/Forms/Product.py">
+        <entry file="file://$PROJECT_DIR$/Model/Product.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <element signature="e#45#91#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2484">
+              <caret line="92" column="39" lean-forward="false" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,27 +67,57 @@
       <file leaf-file-name="ProductRepository.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Repository/ProductRepository.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="114" column="12" lean-forward="true" selection-start-line="114" selection-start-column="12" selection-end-line="114" selection-end-column="12" />
+            <state relative-caret-position="1674">
+              <caret line="127" column="37" lean-forward="false" selection-start-line="127" selection-start-column="37" selection-end-line="127" selection-end-column="37" />
               <folding>
                 <element signature="e#45#93#0" expanded="true" />
                 <element signature="e#304#564#0" expanded="false" />
                 <element signature="e#635#959#0" expanded="false" />
-                <element signature="e#1012#1250#0" expanded="false" />
-                <element signature="e#1323#2922#0" expanded="false" />
-                <element signature="e#2993#3458#0" expanded="false" />
-                <element signature="e#3511#3763#0" expanded="false" />
-                <element signature="e#3811#4186#0" expanded="false" />
-                <marker date="1505823277946" expanded="true" signature="349:407" ph="select count... " />
-                <marker date="1505823277946" expanded="true" signature="684:802" ph="select produ... product" />
-                <marker date="1505823277946" expanded="true" signature="1057:1115" ph="select nid,t... product" />
-                <marker date="1505823277946" expanded="true" signature="1541:1574" ph="insert into product... " />
-                <marker date="1505823277946" expanded="true" signature="2065:2106" ph="insert into product_detail... " />
-                <marker date="1505823277946" expanded="true" signature="2525:2564" ph="insert into product_img... " />
-                <marker date="1505823277946" expanded="false" signature="3038:3312" ph="select price... price" />
-                <marker date="1505823277946" expanded="true" signature="3556:3628" ph="select name,... product_detail" />
-                <marker date="1505823277946" expanded="true" signature="3824:3855" ph="insert into price... " />
-                <marker date="1505823277946" expanded="true" signature="4245:4277" ph="update price... " />
+                <element signature="e#1365#3376#0" expanded="false" />
+                <marker date="1506348534498" expanded="true" signature="349:407" ph="select count... " />
+                <marker date="1506348534498" expanded="true" signature="684:802" ph="select produ... product" />
+                <marker date="1506348534498" expanded="true" signature="1069:1146" ph="select nid,t... product" />
+                <marker date="1506348534498" expanded="true" signature="1583:1616" ph="insert into product... " />
+                <marker date="1506348534498" expanded="true" signature="2317:2359" ph="insert into product_detail... " />
+                <marker date="1506348534498" expanded="true" signature="3004:3043" ph="insert into product_img... " />
+                <marker date="1506348534498" expanded="true" signature="3471:3504" ph="delete from " />
+                <marker date="1506348534498" expanded="true" signature="3786:4060" ph="select price... price" />
+                <marker date="1506348534498" expanded="true" signature="4330:4402" ph="select name,... product_detail" />
+                <marker date="1506348534498" expanded="true" signature="4599:4630" ph="insert into price... " />
+                <marker date="1506348534498" expanded="true" signature="5020:5052" ph="update price... " />
+                <marker date="1506348534498" expanded="true" signature="5416:5471" ph="select count... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JdProductPriceManager.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/Product/JdProductPriceManager.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8289">
+              <caret line="307" column="35" lean-forward="false" selection-start-line="307" selection-start-column="35" selection-end-line="307" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="country.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/Region/country.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6777">
+              <caret line="251" column="52" lean-forward="false" selection-start-line="251" selection-start-column="52" selection-end-line="251" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Application.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="18" />
+              <folding>
+                <element signature="e#46#67#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,6 +140,9 @@
       <find>&lt;table id=&quot;tb&quot;&gt;&lt;/table&gt;</find>
       <find>删除</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -165,26 +178,26 @@
         <option value="$PROJECT_DIR$/Infrastructure/Form/Fields.py" />
         <option value="$PROJECT_DIR$/UIAdmin/Forms/Merchant.py" />
         <option value="$PROJECT_DIR$/Views/Merchant/merchantEdit.html" />
-        <option value="$PROJECT_DIR$/practice.py" />
-        <option value="$PROJECT_DIR$/Repository/MerChantRepository.py" />
-        <option value="$PROJECT_DIR$/UIAdmin/Controllers/Merchant.py" />
-        <option value="$PROJECT_DIR$/Repository/SQLAchemyOrm.py" />
         <option value="$PROJECT_DIR$/Model/Merchant.py" />
         <option value="$PROJECT_DIR$/Infrastructure/createTable.py" />
         <option value="$PROJECT_DIR$/createTable.py" />
-        <option value="$PROJECT_DIR$/Views/Layout/layout.html" />
-        <option value="$PROJECT_DIR$/Views/Product/JdProductPriceManager.html" />
         <option value="$PROJECT_DIR$/Views/Product/JdProductDetail.html" />
-        <option value="$PROJECT_DIR$/UIAdmin/Forms/Product.py" />
-        <option value="$PROJECT_DIR$/Infrastructure/JsonEnoder.py" />
-        <option value="$PROJECT_DIR$/Repository/ProductRepository.py" />
-        <option value="$PROJECT_DIR$/Model/Product.py" />
-        <option value="$PROJECT_DIR$/Views/Product/productManager.html" />
         <option value="$PROJECT_DIR$/Infrastructure/Commons.py" />
-        <option value="$PROJECT_DIR$/UIAdmin/Controllers/Product.py" />
+        <option value="$PROJECT_DIR$/Infrastructure/JsonEnoder.py" />
         <option value="$PROJECT_DIR$/UIAdmin/Controllers/Image.py" />
-        <option value="$PROJECT_DIR$/Application.py" />
+        <option value="$PROJECT_DIR$/practice.py" />
+        <option value="$PROJECT_DIR$/Repository/SQLAchemyOrm.py" />
+        <option value="$PROJECT_DIR$/UIAdmin/Controllers/Merchant.py" />
+        <option value="$PROJECT_DIR$/Repository/MerChantRepository.py" />
         <option value="$PROJECT_DIR$/Views/Product/JdProductEdit.html" />
+        <option value="$PROJECT_DIR$/Views/Layout/layout.html" />
+        <option value="$PROJECT_DIR$/Views/Product/productManager.html" />
+        <option value="$PROJECT_DIR$/UIAdmin/Forms/Product.py" />
+        <option value="$PROJECT_DIR$/UIAdmin/Controllers/Product.py" />
+        <option value="$PROJECT_DIR$/Repository/ProductRepository.py" />
+        <option value="$PROJECT_DIR$/Views/Product/JdProductPriceManager.html" />
+        <option value="$PROJECT_DIR$/Model/Product.py" />
+        <option value="$PROJECT_DIR$/Application.py" />
       </list>
     </option>
   </component>
@@ -195,11 +208,11 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="x" value="-11" />
+    <option name="width" value="1197" />
     <option name="height" value="744" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -215,8 +228,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -348,6 +361,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Statics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Jd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Statics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Upload" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -681,8 +730,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.Application" />
-        <item index="1" class="java.lang.String" itemvalue="Python.createTable" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in practice.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in practice.py" />
+        <item index="2" class="java.lang.String" itemvalue="Python.createTable" />
         <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for practice.test3" />
         <item index="4" class="java.lang.String" itemvalue="Python.practice" />
       </list>
@@ -702,50 +751,50 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_practice_test3 - 2017.09.17 at 12h 50m 36s.xml">
-      <configuration name="Unittests for practice.test3" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_practice_test3 - 2017.09.17 at 12h 52m 34s.xml">
-      <configuration name="Unittests for practice.test3" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_practice_test3 - 2017.09.17 at 12h 53m 23s.xml">
-      <configuration name="Unittests for practice.test3" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_practice_py - 2017.09.06 at 14h 56m 40s.xml">
+    <history-entry file="Unittests_in_practice_py - 2017.09.21 at 13h 28m 18s.xml">
       <configuration name="Unittests in practice.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_practice_py - 2017.09.06 at 14h 57m 06s.xml">
+    <history-entry file="Unittests_in_practice_py - 2017.09.21 at 13h 29m 47s.xml">
       <configuration name="Unittests in practice.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_practice_py - 2017.09.06 at 14h 57m 50s.xml">
+    <history-entry file="Unittests_in_practice_py - 2017.09.21 at 13h 30m 08s.xml">
       <configuration name="Unittests in practice.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_practice_py - 2017.09.17 at 12h 53m 33s.xml">
+    <history-entry file="Unittests_in_practice_py - 2017.09.21 at 13h 31m 47s.xml">
       <configuration name="Unittests in practice.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_practice_py - 2017.09.17 at 12h 54m 50s.xml">
+    <history-entry file="Unittests_in_practice_py - 2017.09.21 at 13h 42m 18s.xml">
       <configuration name="Unittests in practice.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_practice_py - 2017.09.17 at 12h 55m 17s.xml">
+    <history-entry file="Unittests_in_practice_py - 2017.09.21 at 13h 42m 53s.xml">
       <configuration name="Unittests in practice.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_practice_py - 2017.09.17 at 12h 56m 12s.xml">
+    <history-entry file="Unittests_in_practice_py - 2017.09.21 at 13h 44m 02s.xml">
+      <configuration name="Unittests in practice.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_practice_py - 2017.09.21 at 13h 45m 28s.xml">
+      <configuration name="Unittests in practice.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_practice_py - 2017.09.21 at 13h 45m 55s.xml">
+      <configuration name="Unittests in practice.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_practice_py - 2017.09.21 at 13h 49m 01s.xml">
       <configuration name="Unittests in practice.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
+    <frame x="-11" y="0" width="1197" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18229954" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23394899" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2913257" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2704918" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -766,18 +815,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../workplace_env/blog_env/Lib/site-packages/tornado/web.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="400" column="8" lean-forward="false" selection-start-line="400" selection-start-column="8" selection-end-line="400" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -898,13 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/Region/province.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="28" column="127" lean-forward="false" selection-start-line="28" selection-start-column="127" selection-end-line="28" selection-end-column="127" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Repository/RegionRepository.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -926,24 +961,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/Region/country.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="251" column="52" lean-forward="false" selection-start-line="251" selection-start-column="52" selection-end-line="251" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../PythonWeb/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -961,24 +982,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UIAdmin/Controllers/Merchant.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UIAdmin/Controllers/Account.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/Merchant/merchantManager.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -989,45 +996,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UIAdmin/Forms/Merchant.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UIAdmin/Controllers/Region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/Layout/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1269">
-          <caret line="38" column="44" lean-forward="false" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/Product/JdProductDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/Product/JdProductPriceManager.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="89" column="18" lean-forward="false" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Repository/SQLAchemyOrm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="183" column="11" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="183" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1045,27 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Repository/MerChantRepository.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Infrastructure/JsonEnoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="10" column="54" lean-forward="true" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/Product.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="51" column="24" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Infrastructure/Commons.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -1073,85 +1024,177 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/practice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UIAdmin/Forms/Merchant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="695">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Repository/SQLAchemyOrm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="146" column="11" lean-forward="false" selection-start-line="146" selection-start-column="4" selection-end-line="146" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/Region/province.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="206" column="13" lean-forward="true" selection-start-line="151" selection-start-column="13" selection-end-line="206" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UIAdmin/Controllers/Merchant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Repository/MerChantRepository.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/Merchant/merchantManager.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="122" column="30" lean-forward="false" selection-start-line="121" selection-start-column="12" selection-end-line="122" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UIAdmin/Controllers/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/Product/JdProductDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/Layout/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/Product/JdProductEdit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="97" column="28" lean-forward="true" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UIAdmin/Forms/Product.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Views/Product/productManager.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="116" column="63" lean-forward="true" selection-start-line="116" selection-start-column="45" selection-end-line="116" selection-end-column="63" />
+        <state relative-caret-position="-810">
+          <caret line="92" column="82" lean-forward="false" selection-start-line="92" selection-start-column="82" selection-end-line="92" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../workplace_env/blog_env/Lib/site-packages/tornado/web.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-23">
+          <caret line="714" column="44" lean-forward="false" selection-start-line="714" selection-start-column="38" selection-end-line="714" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Infrastructure/JsonEnoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/Region/country.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6777">
+          <caret line="251" column="52" lean-forward="false" selection-start-line="251" selection-start-column="52" selection-end-line="251" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/Product/JdProductPriceManager.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8289">
+          <caret line="307" column="35" lean-forward="false" selection-start-line="307" selection-start-column="35" selection-end-line="307" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UIAdmin/Controllers/Product.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1053">
-          <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+        <state relative-caret-position="3186">
+          <caret line="123" column="30" lean-forward="false" selection-start-line="123" selection-start-column="30" selection-end-line="123" selection-end-column="30" />
           <folding>
             <element signature="e#45#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UIAdmin/Controllers/Image.py">
+    <entry file="file://$PROJECT_DIR$/Model/Product.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        <state relative-caret-position="2484">
+          <caret line="92" column="39" lean-forward="false" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UIAdmin/Forms/Product.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#45#91#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Repository/ProductRepository.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="114" column="12" lean-forward="true" selection-start-line="114" selection-start-column="12" selection-end-line="114" selection-end-column="12" />
+        <state relative-caret-position="1674">
+          <caret line="127" column="37" lean-forward="false" selection-start-line="127" selection-start-column="37" selection-end-line="127" selection-end-column="37" />
           <folding>
             <element signature="e#45#93#0" expanded="true" />
             <element signature="e#304#564#0" expanded="false" />
             <element signature="e#635#959#0" expanded="false" />
-            <element signature="e#1012#1250#0" expanded="false" />
-            <element signature="e#1323#2922#0" expanded="false" />
-            <element signature="e#2993#3458#0" expanded="false" />
-            <element signature="e#3511#3763#0" expanded="false" />
-            <element signature="e#3811#4186#0" expanded="false" />
-            <marker date="1505823277946" expanded="true" signature="349:407" ph="select count... " />
-            <marker date="1505823277946" expanded="true" signature="684:802" ph="select produ... product" />
-            <marker date="1505823277946" expanded="true" signature="1057:1115" ph="select nid,t... product" />
-            <marker date="1505823277946" expanded="true" signature="1541:1574" ph="insert into product... " />
-            <marker date="1505823277946" expanded="true" signature="2065:2106" ph="insert into product_detail... " />
-            <marker date="1505823277946" expanded="true" signature="2525:2564" ph="insert into product_img... " />
-            <marker date="1505823277946" expanded="false" signature="3038:3312" ph="select price... price" />
-            <marker date="1505823277946" expanded="true" signature="3556:3628" ph="select name,... product_detail" />
-            <marker date="1505823277946" expanded="true" signature="3824:3855" ph="insert into price... " />
-            <marker date="1505823277946" expanded="true" signature="4245:4277" ph="update price... " />
+            <element signature="e#1365#3376#0" expanded="false" />
+            <marker date="1506348534498" expanded="true" signature="349:407" ph="select count... " />
+            <marker date="1506348534498" expanded="true" signature="684:802" ph="select produ... product" />
+            <marker date="1506348534498" expanded="true" signature="1069:1146" ph="select nid,t... product" />
+            <marker date="1506348534498" expanded="true" signature="1583:1616" ph="insert into product... " />
+            <marker date="1506348534498" expanded="true" signature="2317:2359" ph="insert into product_detail... " />
+            <marker date="1506348534498" expanded="true" signature="3004:3043" ph="insert into product_img... " />
+            <marker date="1506348534498" expanded="true" signature="3471:3504" ph="delete from " />
+            <marker date="1506348534498" expanded="true" signature="3786:4060" ph="select price... price" />
+            <marker date="1506348534498" expanded="true" signature="4330:4402" ph="select name,... product_detail" />
+            <marker date="1506348534498" expanded="true" signature="4599:4630" ph="insert into price... " />
+            <marker date="1506348534498" expanded="true" signature="5020:5052" ph="update price... " />
+            <marker date="1506348534498" expanded="true" signature="5416:5471" ph="select count... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        <state relative-caret-position="387">
+          <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="18" />
           <folding>
             <element signature="e#46#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/Product/JdProductEdit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="131" column="68" lean-forward="false" selection-start-line="131" selection-start-column="68" selection-end-line="131" selection-end-column="68" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

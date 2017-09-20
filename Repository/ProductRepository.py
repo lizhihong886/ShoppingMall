@@ -19,10 +19,10 @@ class ProductRepository(IProductRepository):
         db_result=cursor.fetchall()
         self.db_conn.close()
         return db_result
-    def get_product_by_id(self,product_id):
+    def get_product_by_id(self,merchant_id,product_id):
         cursor=self.db_conn.connect()
-        sql="""select nid,title,img,category_id from product WHERE nid=%s"""
-        cursor.execute(sql,(product_id,))
+        sql="""select nid,title,img,category_id from product WHERE nid=%s AND merchant_id=%s"""
+        cursor.execute(sql,(product_id,merchant_id))
         db_result=cursor.fetchone()
         self.db_conn.close()
         return db_result
@@ -45,18 +45,31 @@ class ProductRepository(IProductRepository):
         cursor.execute(product_sql,product_dict)
         product_id=cursor.lastrowid
         if detail_list:
-            d=map(lambda x:x.update(product_id=product_id),detail_list)
-            list(d)
-            detail_sql="""insert into product_detail(%s)VALUES (%s)"""
+            # 如果商品详细不为空,则添加商品详细
+            #detail_list追加productID
+            # d=map(lambda x:x.update( {"product_id": product_id}),detail_list)
+            d=[]
+            for i in detail_list:
+                i.update( {"product_id": product_id})
+                d.append(i)
+            #构造sql语句
+            detail_sql="""insert into product_detail(%s) VALUES (%s)"""
             d_k_list=[]
             d_v_list=[]
-            for k in detail_list[0].keys():
+            for k in d[0].keys():
                 d_k_list.append(k)
                 d_v_list.append("%%(%s)s"%k)
-            detail_sql=detail_sql%(",".join(d_k_list),",".join(d_v_list),)
-            cursor.executemany(detail_sql,detail_list)
+            detail_sql=detail_sql%(",".join(d_k_list),",".join(d_v_list))
+            effect_row=cursor.executemany(detail_sql,d)
+            print(effect_row)
         if img_list:
-            i=map(lambda x:x.update(product_id=product_id),img_list)
+            # 如果商品图片不为空,则添加商品图片
+            # img=map(lambda x:x.update({"product_id": product_id}),img_list)
+            # 往img_list添加产品id
+            img = []
+            for i in img_list:
+                i.update({"product_id": product_id})
+                img.append(i)
             img_sql="""insert into product_img(%s) VALUES (%s)"""
             i_k_list=[]
             i_v_list=[]
@@ -64,9 +77,17 @@ class ProductRepository(IProductRepository):
                 i_k_list.append(k)
                 i_v_list.append("%%(%s)s"%k)
             img_sql=img_sql%(",".join(i_k_list),",".join(i_v_list))
-            print(img_sql,img_list)
-            cursor.executemany(img_sql,img_list)
-            self.db_conn.close()
+            cursor.executemany(img_sql,img)
+        self.db_conn.close()
+        return True
+    def delete_product(self,product_id):
+        cursor=self.db_conn.connect()
+        sql="""delete from product  WHERE nid=%s"""
+        effect_rows=cursor.execute(sql,(product_id))
+        self.db_conn.close()
+        return effect_rows
+    def update_product(self,product_id):
+        pass
     def get_price_by_product_id(self,merchant_id,product_id):
         cursor=self.db_conn.connect()
         sql="""select price.nid as nid,
@@ -82,15 +103,17 @@ class ProductRepository(IProductRepository):
         order BY nid desc"""
         cursor.execute(sql,(merchant_id,product_id))
         db_result=cursor.fetchall()
+        print(db_result)
         self.db_conn.close()
         return db_result
-    def fetch_detail_list(self,product_id):
+    def get_product_detail(self,product_id):
         cursor=self.db_conn.connect()
         sql="""select name,value from product_detail WHERE product_detail.product_id=%s"""
         cursor.execute(sql,(product_id,))
         db_result=cursor.fetchall()
         self.db_conn.close()
         return db_result
+
     def create_price(self,price_dict):
         price_sql="""insert into price(%s)VALUE (%s)"""
         p_k_list=[]
@@ -111,6 +134,13 @@ class ProductRepository(IProductRepository):
         cursor=self.db_conn.connect()
         cursor.execute(sql,price_dict)
         self.db_conn.close()
+    def fetch_price_count(self,product_id):
+        cursor=self.db_conn.connect()
+        sql="""select count(1) as count from price WHERE product_id=%s"""
+        cursor.execute(sql,(product_id,))
+        db_result=cursor.fetchone()
+        return db_result["count"]
+
     def get_upv(self,merchant_id,product_id):
         pass
     def create_puv(self,product_id,ip):

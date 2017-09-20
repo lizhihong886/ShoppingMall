@@ -79,7 +79,7 @@ JD自营 / 产品管理
                         align:'center',
                         width: 180,
                         formatter: function(val,row,index){
-                            var tagPrice = "<a href='JdProductPriceManager.html?productid=" + row.nid +"'>规格（价格）</a>";
+                            var tagPrice = "<a href='JdProductPriceManager.html?product_id=" + row.nid +"'>规格（价格）</a>";
                             return tagPrice;
                         }
 
@@ -90,7 +90,7 @@ JD自营 / 产品管理
                         align:'center',
                         width: 180,
                         formatter: function(val,row,index){
-                            var tagPrice = "<a href='JdProductDetail.html?productid=" + row.nid +"'>详细</a>";
+                            var tagPrice = "<a href='JdProductDetail.html?product_id=" + row.nid +"'>详细</a>";
                             return tagPrice;
                         }
 
@@ -116,6 +116,11 @@ JD自营 / 产品管理
                         handler: function(){
                             location.href = 'JdProductEdit.html';
                         }
+                    },
+                    {
+                        text: "删除",
+                        iconCls: 'icon-remove',
+                        handler: RemoveRow
                     }
                 ],
                 pagePosition: 'both',
@@ -148,6 +153,70 @@ JD自营 / 产品管理
 
             })
         }
-	</script>
+
+	  function RemoveRow() {
+            //获取已经选中的行
+            var rows=$("#tb").datagrid("getSelections");
+             // 警告框
+            if(rows.length<1){
+                $.messager.alert("警告","请选择要删除的行","warning")
+            }else if(rows.length>1){
+                $.messager.alert("警告","不支持批量删除","warning")
+            }else{
+                // 确认框
+                $.messager.confirm('确定', '您确定要删除吗？', function (status) {
+                    if(status){
+                        // 点击确定
+                        // 获取当前选中行的值，Ajax发送到后台
+                        var row = rows[0];
+                        $.ajax({
+                            url: '/JdProductEdit.html',
+                            type: 'delete',
+                            data: {nid: row.nid},
+                            dataType: 'json',
+                            success: function (data) {
+                                console.log(data);
+                                if(data.status){
+                                    //删除成功
+                                    $.messager.show({
+                                        msg:'删除成功',
+                                        showType:'slide',
+                                        showSpeed: 500,
+                                        timeout: 5,
+                                        style:{
+                                            right:'',
+                                            top:document.body.scrollTop+document.documentElement.scrollTop,
+                                            bottom:''
+                                        }
+                                    });
+                                    // 重新加载表格
+                                    var rowIndex = $('#tb').datagrid('getRowIndex', row);
+                                    $('#tb').datagrid('deleteRow',rowIndex);
+                                    $('#tb').datagrid('reload');
+
+                                }else{
+                                    //删除失败
+                                    // $.messager.alert('错误信息', data.summary ,'error');
+                                    $.messager.show({
+                                        icon: 'error',
+                                        title:'错误信息',
+                                        msg:data.summary,
+                                        showType:'slide',
+                                        timeout: 0,
+                                        style:{
+                                            right:'',
+                                            top:document.body.scrollTop+document.documentElement.scrollTop,
+                                            bottom:''
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                    }
+                })
+            }
+        }
+
+    </script>
 
 {% end %}

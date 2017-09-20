@@ -8,9 +8,8 @@ from Infrastructure import Commons
 class UploadImageHandler(tornado.web.RequestHandler):
     def post(self, *args, **kwargs):
         ret={"status":False,"data":"","summary":""}
-        print("upload")
         try:
-            file_metas=self.request.files["img"]
+            file_metas=self.request.files["img"]##获取图片对象
             for meta in file_metas:
                 file_name=meta["filename"]
                 file_path=os.path.join("Statics","Admin","Upload",Commons.generate_md5(file_name))

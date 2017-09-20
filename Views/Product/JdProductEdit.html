@@ -103,7 +103,7 @@ JD自营 / 产品管理 / 创建产品
         <div class="label">详细大图：</div>
         <div class="input">
             <form name="form" action="UploadImg.html" method="POST"  enctype="multipart/form-data" >
-                <input type="file" name="img" onchange="UploadImage(1)" />
+                <input type="file" name="img" onchange="UploadImage(this,1)"/>
             </form>
         </div>
     </div>
@@ -129,7 +129,7 @@ JD自营 / 产品管理 / 创建产品
         <div class="label">商品图片介绍：</div>
         <div class="input">
             <form name="form" id="upload_img_form" action="UploadImg.html" method="POST"  enctype="multipart/form-data" >
-                <input type="file" name="img" onchange="UploadImage(2)" />
+                <input type="file" name="img" onchange="UploadImage(this,2)"/>
             </form>
         </div>
     </div>
@@ -150,7 +150,6 @@ JD自营 / 产品管理 / 创建产品
 </div>
 
 <iframe id='upload_img_iframe' name='upload_img_iframe' src=""  class="hide"></iframe>
-
 <script>
 
     $(function(){
@@ -161,23 +160,24 @@ JD自营 / 产品管理 / 创建产品
     /*
     上传图片
     */
-    function UploadImage(type){
+    function UploadImage(ths,type){
         if (type == 1){
             document.getElementById('upload_img_iframe').onload = UploadBigImageComplete;
+            //当iframe上传文件成功时，执行
         }else{
             document.getElementById('upload_img_iframe').onload = UploadImageComplete;
+             //当iframe上传文件成功时，执行
         }
-        $("#upload_img_form").target = 'upload_img_iframe';
-        $("#upload_img_form").submit();
+        $(ths).parent()[0].target = 'upload_img_iframe';//设置form提交到iframe，target属性告诉浏览器希望将所链接的资源显示在哪里，提交后返回数据将显示到框架里
+        $(ths).parent()[0].submit();//提交到iframe，上传
     }
     /*
-    删除大图成功的回调函数
+    上传大图成功的回调函数
      */
     function UploadBigImageComplete(){
-        var origin = $("#upload_img_iframe").contents().find("body").text();
-        var obj = JSON.parse(origin);
+        var origin = $("#upload_img_iframe").contents().find("body").text();//获取图片数据，获取某元素下面所有元素节点，包括文本节点，如果是 iframe，则可以查找文本内容，集合元素
+        var obj = JSON.parse(origin); //转换成JavaScript对象
         // 创建img标签，将图片添加到指定位置
-        console.log(obj);
         if(obj.status){
             // 创建img和input标签添加到
             var prePosition = $('#big_detail_pre_img');
@@ -200,12 +200,11 @@ JD自营 / 产品管理 / 创建产品
      */
     function UploadImageComplete(){
         var origin = $("#upload_img_iframe").contents().find("body").text();
-//        var obj = JSON.parse(origin);
+        var obj = JSON.parse(origin);
         // 创建img标签，将图片添加到指定位置
         if(obj.status){
             // 创建img和input标签添加到
             var prePosition = $('#detail_pre_img');
-
             var div = document.createElement('div');
             div.className = 'detail-pre-img-item';
             var img = document.createElement('img');
@@ -215,12 +214,9 @@ JD自营 / 产品管理 / 创建产品
             input.type='text';
             input.name='img_list';
             input.value = obj.data;
-
             $(div).append(img);
             $(div).append(input);
-
             prePosition.append(div);
-
         }else{
             $.messager.alert('上传失败', obj.summary, 'error');
         }
@@ -238,7 +234,6 @@ JD自营 / 产品管理 / 创建产品
             if (n == 'img_list'){
                 var temp = {'src': v};
                 if (input_data_dict[n] == undefined){
-
                     input_data_dict[n] = [temp];
                 }else{
                     input_data_dict[n].push(temp);
@@ -247,7 +242,7 @@ JD自营 / 产品管理 / 创建产品
                 v = v.trim();
                 var list = v.split('+');
                 if(list.length==2){
-                    var temp = {'name': list[0], 'value': list[1]};
+                    var temp = {'title': list[0], 'content': list[1]};
                     if (input_data_dict[n] == undefined){
                         input_data_dict[n] = [temp];
                     }else{
@@ -257,19 +252,17 @@ JD自营 / 产品管理 / 创建产品
             }else {
                 input_data_dict[n] = v;
             }
-
         });
-
         input_data_dict['img_list'] = JSON.stringify(input_data_dict['img_list']);
         input_data_dict['detail_list'] = JSON.stringify(input_data_dict['detail_list']);
         return input_data_dict;
     }
-
     function DoSubmit(){
         var input_dict = IntegrationData();
+        console.log(input_dict);
         $.ajax({
             url: 'JdProductEdit.html',
-            type: 'POST',
+            type: 'post',
             data: input_dict,
             dataType: 'json',
             success: function(data){
@@ -280,16 +273,13 @@ JD自营 / 产品管理 / 创建产品
                 }
             }
         })
-
     }
 
     function AddDetail(ths){
         var tag = $(ths).next().clone();
         $(tag).append('<i onclick="RemoveDetail(this);" class="remove-detail"> - </i>');
         $(ths).parent().append(tag);
-
     }
-
     function RemoveDetail(ths){
         $(ths).parent().remove();
     }

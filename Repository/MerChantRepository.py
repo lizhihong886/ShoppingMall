@@ -76,7 +76,7 @@ nid=%s"""
         return effect_rows
     def delete_merchant(self, nid):
         cursor=self.db_conn.connect()
-        sql="""delete from merchant where nid=%s"""
+        sql="""delete from merchant  where nid=%s"""
         effect_row=cursor.execute(sql,(nid,))
         self.db_conn.close()
         print(effect_row)

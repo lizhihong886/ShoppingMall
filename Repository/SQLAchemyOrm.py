@@ -143,8 +143,8 @@ class ProductDetail(Base):
     """
     __tablename__="product_detail"
     nid=Column(Integer,primary_key=True)
-    key=Column(VARCHAR(16))
-    value=Column(VARCHAR(32))
+    title=Column(VARCHAR(16))
+    content=Column(VARCHAR(32))
     product_id=Column(Integer,ForeignKey("product.nid"))
 
 class ProductImg(Base):

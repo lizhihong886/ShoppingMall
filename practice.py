@@ -35,9 +35,17 @@ def test3(func,**kwargs ):
 
 
 
-def test4(**kwargs):
-    print("text4")
-    print(kwargs)
+# def test4(**kwargs):
+#     print("text4")
+#     print(kwargs)
+#
+# test3(test4,name='Mike',age='22',sex='male')
+# # test3(**{'name':'Jack','age':30,'sex':'male'})
 
-test3(test4,name='Mike',age='22',sex='male')
-# test3(**{'name':'Jack','age':30,'sex':'male'})
+detail_list=[{'name': 'ad', 'value': '123'},{"name":"ak"}]
+add={"province_id":1}
+li=[]
+for i in detail_list:
+    i.update(add)
+    li.append(i)
+print(li)

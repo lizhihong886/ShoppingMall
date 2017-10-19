@@ -79,7 +79,6 @@ class MerchantEdit(tornado.web.RequestHandler):
         except IntegrityError as e:
             error_summary="商户名称或登录用户必须唯一"
         except Exception as e:
-            print(e)
             error_summary=str(e)
         self.render("Merchant/merchantEdit.html",form=form,crumbs="添加商户",method="post",summary=error_summary,nid=None)
 
@@ -103,7 +102,6 @@ class MerchantEdit(tornado.web.RequestHandler):
                     db_result=service.update_merchant(nid,**form._value_dict)
                     print(db_result)
                     if db_result:
-                        print("redirect")
                         self.redirect("merchantManager.html")
                         return
                     else:

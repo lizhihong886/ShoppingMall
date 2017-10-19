@@ -103,9 +103,9 @@ class ProductRepository(IProductRepository):
         order BY nid desc"""
         cursor.execute(sql,(merchant_id,product_id))
         db_result=cursor.fetchall()
-        print(db_result)
         self.db_conn.close()
         return db_result
+
     def get_product_detail(self,product_id):
         cursor=self.db_conn.connect()
         sql="""select name,value from product_detail WHERE product_detail.product_id=%s"""
@@ -130,16 +130,25 @@ class ProductRepository(IProductRepository):
         value_list=[]
         for k,v in price_dict.items():
             value_list.append("%s=%%(%s)s"%(k,k))
-        sql=sql%(','.join(value_list),(nid,))
+        sql=sql%(','.join(value_list),nid)
         cursor=self.db_conn.connect()
-        cursor.execute(sql,price_dict)
+        effect_row=cursor.execute(sql,price_dict)
         self.db_conn.close()
+        return effect_row
+    def delete_price(self, price_id):
+        cursor=self.db_conn.connect()
+        sql="""delete from price WHERE nid=%s"""
+        effect_row=cursor.execute(sql,(price_id,))
+        self.db_conn.close()
+        return effect_row
+
     def fetch_price_count(self,product_id):
         cursor=self.db_conn.connect()
         sql="""select count(1) as count from price WHERE product_id=%s"""
         cursor.execute(sql,(product_id,))
         db_result=cursor.fetchone()
         return db_result["count"]
+
 
     def get_upv(self,merchant_id,product_id):
         pass

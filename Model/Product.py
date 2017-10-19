@@ -2,8 +2,6 @@
 # -*-coding:utf-8 -*-
 import time,json
 #模型
-class ProductModel:
-    pass
 
 #接口
 class IProductRepository:
@@ -32,11 +30,12 @@ class IProductRepository:
 
     def update_price(self, merchant_id, product_id, nid, input_dict):
         raise Exception("NotImplementException")
+    def delete_price(self, price_id):
+        raise Exception("NotImplementException")
     def fetch_price_count(self,product_id):
         raise Exception("NotImplementException")
     def get_upv(self, merchant_id, product_id):
         raise Exception("NotImplementException")
-
     def create_puv(self, product_id, ip):
         raise Exception("NotImplementException")
 
@@ -92,12 +91,20 @@ class ProductService:
             raise Exception("无权创建规格")
         self.product_repository.create_price(input_dict)
     def update_price(self,merchant_id,product_id,nid,input_dict):
-        pass
+        #检查当前用户是否有权限为修改商品的价格
+        is_valid=self.product_repository.get_product_by_id(merchant_id,product_id)
+        if not is_valid:
+            raise Exception("无权修改规格")
+        db_result=self.product_repository.update_price(nid,input_dict)
+        return db_result
+    def delete_price(self,price_id):
+        db_result=self.product_repository.delete_price(price_id)
+        return db_result
     def get_upv(self,merchant_id,product_id):
         pass
     def create_puv(self,product_id,ip):
         pass
     def fetch_index_product(self):
-        pass
+        super_new_list=self.product_repository.
     def fetch_product_detail(self,product_id,price_id):
         pass

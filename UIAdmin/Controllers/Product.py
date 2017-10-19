@@ -33,7 +33,21 @@ class JdProductHandler(tornado.web.RequestHandler):
 
 class JdProductEditHandler(tornado.web.RequestHandler):
     def get(self,*args,**kwargs):
-        self.render("Product/JdProductEdit.html")
+        error_summary=""
+        product_id=self.get_argument("product_id",None)
+        if not product_id:
+            crumbs="添加产品"
+            method="post"
+        else:
+            crumbs="编辑产品"
+            method="put"
+            #根据产品id获取产品信息
+            merchant_id=6
+            service=ProductService(ProductRepository())
+            data=service.get_product_by_id(merchant_id,product_id)
+            print(data)
+
+        self.render("Product/JdProductEdit.html",crumbs=crumbs,method=method,data=data)
 
     def post(self,*args,**kwargs):
         ret={"status":False,"summary":"","detail":""}
@@ -51,6 +65,10 @@ class JdProductEditHandler(tornado.web.RequestHandler):
         except Exception as e:
             ret["summary"]=str(e)
         self.write(json.dumps(ret))
+    def put(self, *args, **kwargs):
+        """修改产品"""
+
+
 
     def delete(self, *args, **kwargs):
         product_id = self.get_argument("nid")
@@ -76,7 +94,6 @@ class JdProductPriceManagerHandler(tornado.web.RequestHandler):
         ret={"status":False,"summary":"","data":{}}
         try:
             product_id=self.get_argument('product_id',None)
-            print(product_id)
             if not product_id:
                 raise Exception("请输入产品Id")
             else:
@@ -89,7 +106,6 @@ class JdProductPriceManagerHandler(tornado.web.RequestHandler):
                 ret["data"]=data
         except Exception as e:
             ret["summary"]=str(e)
-
         self.render("Product/JdProductPriceManager.html",**ret)
 
 class JdProdutPriceHandler(tornado.web.RequestHandler):
@@ -104,19 +120,17 @@ class JdProdutPriceHandler(tornado.web.RequestHandler):
             total,result=service.get_price_by_product_id(merchant_id=merchant_id,product_id=product_id)
             ret["total"]=total
             ret['rows']=result
-            print(total)
-            print("result:",result)
             ret["status"]=True
         except Exception as e:
-            print(e)
             ret["summary"]=str(e)
         self.write(json.dumps(ret,cls=JsonCustomEncoder))
 
     def post(self, *args, **kwargs):
+        print("self:",self)
         ret={"status":False,"summary":"","detail":{}}
         try:
-            form =JdProductPriceForm()
-            is_valid=form.valid(self)
+            form =JdProductPriceForm()#创建form表单
+            is_valid=form.valid(self)#实例化form表单
             if is_valid:
                 form._value_dict.pop("nid")
                 merchant_id=6
@@ -145,11 +159,25 @@ class JdProdutPriceHandler(tornado.web.RequestHandler):
                 raise Exception("输入内容不合法")
             ret['status']=True
         except Exception as e:
+            print(e)
             ret["summary"]=str(e)
         self.write(json.dumps(ret))
 
     def delete(self,*args,**kwargs):
-        pass
+        ret={"summary":"","status":False,}
+        nid=self.get_argument("nid",None)
+        if nid:
+            try:
+                service=ProductService(ProductRepository())
+                result=service.delete_price(nid)
+                if  not result:
+                    raise Exception("删除失败")
+                ret["status"]=True
+            except Exception as e:
+                ret["summary"]=str(e)
+        else:
+            ret['summary']="请选择要陕删除的行"
+        self.write(json.dumps(ret))
 
 class JdProductDetailHandler(tornado.web.RequestHandler):
     def get(self,*args,**kwargs):

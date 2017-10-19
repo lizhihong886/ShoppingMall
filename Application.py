@@ -34,5 +34,5 @@ application = tornado.web.Application([
 # Application对象是负责全局配置的, 包括映射请求转发给处理程序的路由表.
 
 if __name__ == "__main__":
-    application.listen(5858)
+    application.listen(2323)
     tornado.ioloop.IOLoop.instance().start()

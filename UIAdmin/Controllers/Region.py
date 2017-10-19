@@ -6,6 +6,8 @@ from Model.Region import ProvinceService,CityService,CountryService
 
 class Province(tornado.web.RequestHandler):
     def get(self, *args, **kwargs):
+        print("province")
+
         self.render("Region/province.html")
 
 class Province_data(tornado.web.RequestHandler):

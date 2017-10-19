@@ -18,7 +18,6 @@ class BaseForm:
             field_obj.name = field_name
 
     def init_value(self, init_dict):
-        print("init_dict",init_dict)
         for field_name, field_obj in self.__dict__.items():
             if field_name.startswith('_'):
                 continue
